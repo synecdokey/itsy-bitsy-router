@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { useRoutes, useNavigate } from "../src";
+import { useRoutes, useNavigate, useParams } from "../src";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -19,8 +19,15 @@ const Test = () => {
   return (
     <main>
       <a onClick={() => navigate("/")}>home</a>
+      <a onClick={() => navigate("/user/mono")}>mono</a>
     </main>
   );
+};
+
+const User = () => {
+  const { username } = useParams();
+  console.log(useParams());
+  return <p>User: {username}</p>;
 };
 
 const App = () => {
@@ -28,6 +35,7 @@ const App = () => {
     [
       { path: "/", element: <Home /> },
       { path: "/test", element: <Test /> },
+      { path: "/user/:username", element: <User /> },
     ],
     <p>404</p>
   );

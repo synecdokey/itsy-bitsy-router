@@ -6,6 +6,7 @@ import React, {
   useState,
   FC,
 } from "react";
+import { pathToRegexp, match } from "path-to-regexp";
 
 type Route = {
   path: string;
@@ -51,9 +52,13 @@ const Router: FC<{ routes: Route[]; fallback: ReactNode }> = ({
   fallback,
 }) => {
   const location = useLocation();
+  const matches = routes.map(({ path, element }) => ({
+    match: match(path),
+    element,
+  }));
 
   const currentRoute =
-    routes.find(({ path }) => path === location.pathname)?.element || fallback;
+    matches.find(({ match }) => match(location.pathname))?.element || fallback;
   return currentRoute;
 };
 

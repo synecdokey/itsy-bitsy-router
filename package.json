@@ -19,5 +19,8 @@
   },
   "scripts": {
     "demo": "parcel ./demo/index.html"
+  },
+  "dependencies": {
+    "path-to-regexp": "^6.1.0"
   }
 }

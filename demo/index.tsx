@@ -26,8 +26,16 @@ const Test = () => {
 
 const User = () => {
   const { username } = useParams();
-  console.log(useParams());
-  return <p>User: {username}</p>;
+  const navigate = useNavigate();
+  return (
+    <main>
+      <button onClick={() => navigate(undefined, { state: { wow: "wowie" } })}>
+        prev
+      </button>
+      <p>history: {JSON.stringify(history.state)}</p>
+      <p>User: {username}</p>
+    </main>
+  );
 };
 
 const App = () => {

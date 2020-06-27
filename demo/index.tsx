@@ -8,18 +8,18 @@ const Home = () => {
 
   return (
     <main>
-      <a onClick={() => navigate("/test")}>test</a>
+      <h2>Home Page</h2>
     </main>
   );
 };
 
 const Test = () => {
-  const navigate = useNavigate();
-
   return (
     <main>
-      <Link to="/">home</Link>
-      <a onClick={() => navigate("/user/mono")}>mono</a>
+      <h2>Test page</h2>
+      <Link to="/user/mono" state={{ from: "test page" }}>
+        Some other page
+      </Link>
     </main>
   );
 };
@@ -27,6 +27,7 @@ const Test = () => {
 const User = () => {
   const { username } = useParams();
   const navigate = useNavigate();
+
   return (
     <main>
       <button
@@ -49,7 +50,7 @@ const User = () => {
 };
 
 const App = () => {
-  const elem = useRoutes(
+  const Router = useRoutes(
     [
       { path: "/", element: <Home /> },
       { path: "/test", element: <Test /> },
@@ -58,7 +59,31 @@ const App = () => {
     <p>404</p>
   );
 
-  return <>{elem}</>;
+  return (
+    <Router
+      render={({ children }) => (
+        <>
+          <header>
+            <h1>Router demo</h1>
+            <nav role="navigation">
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/test">Test</Link>
+                </li>
+                <li>
+                  <Link to="/nowhere">Nowhere</Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          {children}
+        </>
+      )}
+    />
+  );
 };
 
 ReactDOM.unstable_createRoot(document.getElementById("root")!).render(<App />);

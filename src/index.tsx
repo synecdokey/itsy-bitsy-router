@@ -5,6 +5,7 @@ import React, {
   useContext,
   useState,
   FC,
+  ReactElement,
 } from "react";
 import { match, MatchFunction } from "path-to-regexp";
 
@@ -19,7 +20,7 @@ type Route = {
 };
 
 const RouterContext = createContext<{
-  params: object;
+  params: Record<string, string>;
   currentRoute: ReactNode;
 }>({ params: {}, currentRoute: null });
 
@@ -50,21 +51,27 @@ const RouterContextProvider: FC<{
 
 export const useParams = () => useContext(RouterContext).params;
 
-const Router = ({ children }) => {
-  const { currentRoute } = useContext(RouterContext);
-  return currentRoute || children;
+type RouterProps = {
+  render: FC;
+  children: ReactNode;
 };
 
-export const useRoutes = (routes: Route[], fallback: ReactNode) => {
+const Router = ({ render, children }: RouterProps) => {
+  const { currentRoute } = useContext(RouterContext);
+  const route: ReactNode = currentRoute || children;
+  return (render ? render({ children: route }) : route) as JSX.Element;
+};
+
+export const useRoutes = (routes: Route[], fallback: ReactElement) => {
   const matches = routes.map(({ path, element }) => ({
     match: match(path),
     element,
   }));
 
-  return (
+  return ({ render }: { render: FC }) => (
     <LocationContextProvider>
       <RouterContextProvider matches={matches}>
-        <Router>{fallback}</Router>
+        <Router render={render}>{fallback}</Router>
       </RouterContextProvider>
     </LocationContextProvider>
   );

@@ -29,8 +29,18 @@ const User = () => {
   const navigate = useNavigate();
   return (
     <main>
-      <button onClick={() => navigate(undefined, { state: { wow: "wowie" } })}>
-        prev
+      <button
+        onClick={() => navigate(undefined, { state: { from: "button" } })}
+      >
+        State from button
+      </button>
+      <Link state={{ from: "link" }}>Set some link state</Link>
+      <button
+        onClick={() => {
+          history.back();
+        }}
+      >
+        Back
       </button>
       <p>history: {JSON.stringify(history.state)}</p>
       <p>User: {username}</p>

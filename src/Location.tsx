@@ -37,8 +37,9 @@ export const useLocation = () => useContext(LocationContext).location;
 export const useNavigate = () => {
   const { location, setLocation } = useContext(LocationContext);
 
-  return (to: string, state?: object) => {
-    history.pushState(state, "", to);
-    setLocation({ ...location, pathname: to });
+  return (to?: string, opts?: { state?: object; replace?: boolean }) => {
+    const method = opts?.replace ? "replaceState" : "pushState";
+    history[method](opts?.state, "", to);
+    setLocation({ ...location, pathname: to || location.pathname });
   };
 };

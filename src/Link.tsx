@@ -6,15 +6,22 @@ type LinkProps = {
   state: object | undefined;
 } & React.HTMLProps<HTMLAnchorElement>;
 
-export const Link: FC<LinkProps> = ({ to, state, children, ...props }) => {
+export const Link: FC<LinkProps> = ({
+  to,
+  onClick,
+  state,
+  children,
+  ...props
+}) => {
   const navigate = useNavigate();
-  const onClick: React.MouseEventHandler = (ev) => {
+  const onClickCopy: React.MouseEventHandler<HTMLAnchorElement> = (ev) => {
     ev.preventDefault();
+    if (onClick) onClick(ev);
     navigate(to, state);
   };
 
   return (
-    <a onClick={onClick} href={to} {...props}>
+    <a onClick={onClickCopy} href={to} {...props}>
       {children}
     </a>
   );

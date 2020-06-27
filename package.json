@@ -2,11 +2,16 @@
   "name": "picorouter",
   "version": "0.0.1",
   "description": "Small and opinionated routing solution for React",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/synecdokey/picorouter",
   "author": "Emilia",
   "license": "MIT",
   "private": true,
+  "dependencies": {
+    "path-to-regexp": "^6.1.0"
+  },
   "devDependencies": {
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.8",
@@ -18,9 +23,10 @@
     "react": "^0.0.0-experimental-7f28234f8"
   },
   "scripts": {
+    "build": "parcel build ./src/index.tsx",
     "demo": "parcel ./demo/index.html"
   },
-  "dependencies": {
-    "path-to-regexp": "^6.1.0"
-  }
+  "browserslist": [
+    "> 2%"
+  ]
 }

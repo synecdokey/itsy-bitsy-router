@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { useRoutes, useNavigate, useParams } from "../src";
+import { Link, useRoutes, useNavigate, useParams } from "../src";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const Test = () => {
 
   return (
     <main>
-      <a onClick={() => navigate("/")}>home</a>
+      <Link to="/">home</Link>
       <a onClick={() => navigate("/user/mono")}>mono</a>
     </main>
   );

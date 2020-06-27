@@ -8,6 +8,8 @@ import React, {
 } from "react";
 import { match } from "path-to-regexp";
 
+export { Link } from "./Link";
+
 type Route = {
   path: string;
   element: ReactNode;

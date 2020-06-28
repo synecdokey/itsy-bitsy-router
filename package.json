@@ -1,5 +1,5 @@
 {
-  "name": "@pico/router",
+  "name": "itsy-bitsy-router",
   "version": "0.1.0",
   "description": "Small and opinionated routing solution for React",
   "main": "dist/index.js",

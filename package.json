@@ -1,6 +1,6 @@
 {
-  "name": "picorouter",
-  "version": "0.0.1",
+  "name": "@pico/router",
+  "version": "0.1.0",
   "description": "Small and opinionated routing solution for React",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -8,7 +8,6 @@
   "repository": "https://github.com/synecdokey/picorouter",
   "author": "Emilia",
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "path-to-regexp": "^6.1.0"
   },

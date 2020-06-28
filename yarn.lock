@@ -5237,14 +5237,15 @@ randomfill@^1.0.3:
     randombytes "^2.0.5"
     safe-buffer "^5.1.0"
 
-react-dom@^0.0.0-experimental-7f28234f8:
-  version "0.0.0-experimental-7f28234f8"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-0.0.0-experimental-7f28234f8.tgz#529be5b78d1b8bdf75aaf7c5685a199eaa6964bf"
-  integrity sha512-5kQYnGXFWKKic6PcDhPuPlHHLDQd+R7dFWstPWu9gq3fzjxM70szbKn+0XhzrTxWkxeoEj1n5JIWWbw25BUBcg==
+react-dom@^16.8.0:
+  version "16.13.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
+  integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-    scheduler "0.0.0-experimental-7f28234f8"
+    prop-types "^15.6.2"
+    scheduler "^0.19.1"
 
 react-is@^16.8.1:
   version "16.13.1"
@@ -5522,10 +5523,10 @@ saxes@^3.1.9:
   dependencies:
     xmlchars "^2.1.1"
 
-scheduler@0.0.0-experimental-7f28234f8:
-  version "0.0.0-experimental-7f28234f8"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.0.0-experimental-7f28234f8.tgz#da71b19522aa2e7227e806a50ae6974e4c630f50"
-  integrity sha512-nPR3slpTIiJBMfhzHZj4tqOQeUZReFF3vyP1mBlzfSpSjGxEwqHPPF6hWx7+YlAhJZxuGgwBUa8kfb3OOK4a9Q==
+scheduler@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
+  integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

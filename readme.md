@@ -8,7 +8,7 @@ applications. It is not compatible with IE and never will be.
 You know the drill.
 
 ```shell
-yarn add picorouter
+yarn add itsy-bitsy-router
 ```
 
 ## Usage

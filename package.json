@@ -1,6 +1,6 @@
 {
   "name": "itsy-bitsy-router",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Small and opinionated routing solution for React",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/synecdokey/picorouter",
+  "repository": "https://github.com/synecdokey/itsy-bitsy-router",
   "author": "Emilia",
   "license": "MIT",
   "dependencies": {

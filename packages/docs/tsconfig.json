@@ -6,6 +6,6 @@
     "noEmit": true,
     "skipLibCheck": true,
     "strict": true,
-    "types": ["react/experimental", "react-dom/experimental"]
+    "types": ["react/experimental"]
   }
 }

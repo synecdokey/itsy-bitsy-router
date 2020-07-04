@@ -1,33 +1,6 @@
 {
-  "name": "itsy-bitsy-router",
-  "version": "0.2.0",
-  "description": "Small and opinionated routing solution for React",
-  "main": "dist/index.js",
-  "module": "dist/module.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "repository": "https://github.com/synecdokey/itsy-bitsy-router",
-  "author": "Emilia",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "@types/react": "^16.9.38",
-    "@types/react-dom": "^16.9.8",
-    "parcel": "^2.0.0-beta.1",
-    "react-dom": "^16.8.0",
-    "typescript": "^3.9.5"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0"
-  },
-  "scripts": {
-    "build": "parcel build ./src/index.tsx",
-    "demo": "parcel ./demo/index.html",
-    "prepack": "rm -rf dist/ && yarn build"
-  },
-  "browserslist": [
-    "> 2%"
+  "private": "true",
+  "workspaces": [
+    "packages/*"
   ]
 }

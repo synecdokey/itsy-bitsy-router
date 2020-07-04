@@ -1,11 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import { Link, useRoutes, useNavigate, useParams } from "../src";
+import { Link, useRoutes, useNavigate, useParams } from "itsy-bitsy-router";
 
 const Home = () => {
-  const navigate = useNavigate();
-
   return (
     <main>
       <h2>Home Page</h2>
@@ -86,4 +83,4 @@ const App = () => {
   );
 };
 
-ReactDOM.unstable_createRoot(document.getElementById("root")!).render(<App />);
+ReactDOM.render(<App />, document.getElementById("root")!);

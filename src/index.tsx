@@ -7,7 +7,8 @@ import React, {
   FC,
   ReactElement,
 } from "react";
-import { match, MatchFunction } from "path-to-regexp";
+
+import match from "./match";
 
 export { Link } from "./Link";
 import { LocationContextProvider, useLocation } from "./Location";
@@ -25,7 +26,7 @@ const RouterContext = createContext<{
 }>({ params: {}, currentRoute: null });
 
 const RouterContextProvider: FC<{
-  matches: { match: MatchFunction; element: ReactNode }[];
+  matches: { match: RegExp; element: ReactNode }[];
 }> = ({ matches, children }) => {
   const location = useLocation();
   const [params, setParams] = useState({});
@@ -33,9 +34,9 @@ const RouterContextProvider: FC<{
 
   useEffect(() => {
     const route = matches.find(({ match }) => {
-      const matched = match(location.pathname);
+      const matched = match.exec(location.pathname);
       if (matched) {
-        setParams(matched.params as Record<string, string>);
+        setParams(matched.groups as Record<string, string>);
       }
       return matched;
     })?.element;

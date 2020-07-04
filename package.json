@@ -11,9 +11,7 @@
   "repository": "https://github.com/synecdokey/itsy-bitsy-router",
   "author": "Emilia",
   "license": "MIT",
-  "dependencies": {
-    "path-to-regexp": "^6.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.8",

@@ -1,6 +1,6 @@
 {
   "name": "itsy-bitsy-router",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Small and opinionated routing solution for React",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -24,7 +24,8 @@
   },
   "scripts": {
     "build": "parcel build ./src/index.tsx",
-    "demo": "parcel ./demo/index.html"
+    "demo": "parcel ./demo/index.html",
+    "prepack": "rm -rf dist/ && yarn build"
   },
   "browserslist": [
     "> 2%"

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Link, useRoutes, useNavigate, useParams } from "itsy-bitsy-router";
+import Header from "./components/Header";
 
 const Home = () => {
   return (
@@ -60,22 +61,7 @@ const App = () => {
     <Router
       render={({ children }) => (
         <>
-          <header>
-            <h1>Router demo</h1>
-            <nav role="navigation">
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/test">Test</Link>
-                </li>
-                <li>
-                  <Link to="/nowhere">Nowhere</Link>
-                </li>
-              </ul>
-            </nav>
-          </header>
+          <Header />
           {children}
         </>
       )}

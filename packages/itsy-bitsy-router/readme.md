@@ -33,9 +33,8 @@ prop.
 
 ### Navigation
 
-To navigate inside your app, there is still the need for a `<Link>` component,
-the history API provides no way to listen to `history.pushState()` nor
-`history.replaceState()` at the moment.
+To navigate inside your app using anchor links, there is still the need for a
+`<Link>` component,
 
 ```js
 return (
@@ -45,8 +44,20 @@ return (
 );
 ```
 
-Using `history.back()` and `history.forward()` will work as expected, no need
-for some `useHistory()` shenanigans.
+Since the browser history API provides no way to listen to `history.pushState()`
+nor `history.replaceState()` at the moment, you will need `useNavigate()` to
+handle navigation.
+
+```jsx
+const Button = () => {
+  const navigate = useNavigate();
+  return <button onClick={() => navigate("/this-url")}>Click me</button>;
+};
+```
+
+To navigate programatically, you can use `history.back()` and
+`history.forward()`. They will work as expected, without the need for some
+`useHistory()` shenanigans.
 
 ### Access data
 

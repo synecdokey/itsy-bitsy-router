@@ -4,6 +4,7 @@
     "jsx": "react",
     "lib": ["DOM", "ESNext"],
     "noEmit": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "types": ["react/experimental"]

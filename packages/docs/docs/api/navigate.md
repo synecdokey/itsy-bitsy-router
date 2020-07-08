@@ -1,0 +1,37 @@
+# navigate
+
+Function returned by [`useNavigate`](./Hooks.md#useNavigate).
+
+```js
+const navigate = useNavigate();
+```
+
+## to: string
+
+The first argument is the url to navigate to, provided as a string. Leave empty
+to navigate to the same page.
+
+```js
+const navigate = useNavigate();
+navigate("/home");
+```
+
+## opts: {state: object, replace: boolean}
+
+The second argument is an optional object containing `state` and `replace` keys.
+
+`state` is an optional object representing the state to provide to the `history`
+object.
+
+```js
+const navigate = useNavigate();
+navigate("/checkout", { state: { promoCode: "ABC" } });
+```
+
+`replace` is an optional boolean that when `true` overrides the current entry in
+the browser history rather than creating a new one.
+
+```js
+const navigate = useNavigate();
+navigate("/checkout", { replace: true });
+```

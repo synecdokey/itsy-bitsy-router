@@ -32,8 +32,15 @@ export const LocationContextProvider: FC = ({ children }) => {
   );
 };
 
+/**
+ * `useLocation` is a hook returning the current location object
+ */
 export const useLocation = () => useContext(LocationContext).location;
 
+/**
+ * `useNavigate` is a hook returning a function that enables programmatical
+ * navigation
+ */
 export const useNavigate = () => {
   const { location, setLocation } = useContext(LocationContext);
 

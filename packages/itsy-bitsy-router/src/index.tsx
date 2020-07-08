@@ -5,7 +5,6 @@ import React, {
   useContext,
   useState,
   FC,
-  ReactElement,
 } from "react";
 
 import match from "./match";
@@ -50,10 +49,13 @@ const RouterContextProvider: FC<{
   );
 };
 
+/**
+ * `useParams` is a hook that returns the matching parameters of your route path
+ */
 export const useParams = () => useContext(RouterContext).params;
 
 type RouterProps = {
-  render: FC;
+  render?: FC;
   children: ReactNode;
 };
 
@@ -63,13 +65,19 @@ const Router = ({ render, children }: RouterProps) => {
   return (render ? render({ children: route }) : route) as JSX.Element;
 };
 
-export const useRoutes = (routes: Route[], fallback: ReactElement) => {
+/**
+ * `useRoutes` is a hook that allows you to declaratively describe your routes,
+ * and returns a Router as a react element
+ * @param routes   An Array of javascript objects representing a route
+ * @param fallback The element to display in case nothing matches
+ */
+export const useRoutes = (routes: Route[], fallback: JSX.Element) => {
   const matches = routes.map(({ path, element }) => ({
     match: match(path),
     element,
   }));
 
-  return ({ render }: { render: FC }) => (
+  return ({ render }: { render?: FC }): JSX.Element => (
     <LocationContextProvider>
       <RouterContextProvider matches={matches}>
         <Router render={render}>{fallback}</Router>

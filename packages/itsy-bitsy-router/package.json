@@ -13,8 +13,11 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "@jest/globals": "^26.1.0",
     "@types/react": "^16.9.41",
+    "jest": "^26.1.0",
     "parcel": "^2.0.0-beta.1",
+    "ts-jest": "^26.1.1",
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
@@ -22,8 +25,10 @@
   },
   "scripts": {
     "build": "parcel build ./src/index.tsx",
-    "prepack": "rm -rf dist/ && yarn build"
+    "prepack": "rm -rf dist/ && yarn build",
+    "test": "jest"
   },
+  "sideEffects": false,
   "browserslist": [
     "> 2%"
   ]

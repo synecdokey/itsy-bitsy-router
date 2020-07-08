@@ -16,6 +16,9 @@ useRoutes(
 );
 ```
 
+> ⚠️ Warning: This is the only part that's likely to change before v1 is
+> released.
+
 ## useParams
 
 Returns an object with key/value pairs associated with matched params.

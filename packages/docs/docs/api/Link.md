@@ -20,7 +20,9 @@ navigate to the same page.
 
 ### state: object
 
-State to add to the `location` object.
+State to add to the
+[`history`](https://developer.mozilla.org/en-US/docs/Web/API/Window/history)
+object.
 
 ```jsx
 <Link to="/home" state={{ from: "internalLink" }}>

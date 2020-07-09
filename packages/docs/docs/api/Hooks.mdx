@@ -2,6 +2,10 @@
 
 ## useRoutes
 
+<div className="bg-red-200 p-2 border-l-4 border-red-500 my-2">
+  Warning: This is may change before v1 is released
+</div>
+
 Creates a `<Router />` with all provided routes, represented as an array of
 objects.
 
@@ -16,9 +20,6 @@ useRoutes(
 );
 ```
 
-> ⚠️ Warning: This is the only part that's likely to change before v1 is
-> released.
-
 ## useParams
 
 Returns an object with key/value pairs associated with matched params.
@@ -30,7 +31,7 @@ const { name } = useParams();
 
 ## useNavigate
 
-Returns a [`navigate`](./navigate.md) function that enables programmatical
+Returns a [`navigate`](/navigate) function that enables programmatical
 navigation.
 
 ```js
@@ -38,6 +39,9 @@ const navigate = useNavigate();
 ```
 
 ## useLocation
+
+> Note: This is mostly provided for compatibility, you should be able to use
+> `window.location` directly.
 
 Returns the current
 [`location`](https://developer.mozilla.org/en-US/docs/Web/API/Location) object
@@ -47,5 +51,3 @@ properties.
 const { pathname, hash, origin, ...rest } = useLocation();
 ```
 
-> Note: This is mostly provided for compatibility, you should be able to use
-> `window.location` directly.

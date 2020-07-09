@@ -55,6 +55,14 @@ const code: FC = ({ children }) => (
   </Highlight>
 );
 
-const components = { h1, h2, a, inlineCode, code };
+const blockquote: FC = ({ children }) => {
+  return (
+    <div className="bg-blue-200 p-2 my-2 border-l-4 border-blue-500">
+      {children}
+    </div>
+  );
+};
+
+const components = { h1, h2, a, inlineCode, code, blockquote };
 
 export default components;

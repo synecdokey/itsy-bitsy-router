@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
     "jsx": "react",
     "lib": ["DOM", "ESNext"],
     "noEmit": true,
+    "paths": {
+      "~*": ["./*"]
+    },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,

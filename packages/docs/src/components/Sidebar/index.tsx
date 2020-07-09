@@ -1,4 +1,4 @@
-import React, { FC, HTMLProps, DetailedHTMLProps } from "react";
+import React from "react";
 import { Link } from "itsy-bitsy-router";
 
 const NavHeading = (props) => (
@@ -7,22 +7,19 @@ const NavHeading = (props) => (
 
 const NavLink: typeof Link = ({ className, ...props }) => (
   <li>
-    <Link className={`pl-4 hover:underline text-sm ${className}`} {...props} />
+    <Link className="pl-4 hover:underline text-sm" {...props} />
   </li>
 );
 
 const PropLink: typeof Link = ({ className, ...props }) => (
   <li>
-    <Link
-      className={`pl-8 text-gray-700 hover:underline text-sm ${className}`}
-      {...props}
-    />
+    <Link className="pl-8 text-gray-700 hover:underline text-sm" {...props} />
   </li>
 );
 
 const Sidebar = () => {
   return (
-    <aside className="bg-gray-100 h-full">
+    <aside className="bg-gray-100 h-screen">
       <nav className="flex flex-col p-4 h-full">
         <Link
           to="/"
@@ -37,10 +34,10 @@ const Sidebar = () => {
         <NavHeading>API</NavHeading>
         <ul>
           <NavLink to="hooks">Hooks</NavLink>
-          <PropLink to="useRoutes">useRoutes</PropLink>
-          <PropLink to="useParams">useParams</PropLink>
-          <PropLink to="useNavigate">useNavigate</PropLink>
-          <PropLink to="useLocation">useLocation</PropLink>
+          <PropLink to="hooks#useRoutes">useRoutes</PropLink>
+          <PropLink to="hooks#useParams">useParams</PropLink>
+          <PropLink to="hooks#useNavigate">useNavigate</PropLink>
+          <PropLink to="hooks#useLocation">useLocation</PropLink>
           <NavLink to="link">{"<Link />"}</NavLink>
           <PropLink to="link#to">to: string</PropLink>
           <PropLink to="link#state">state: object</PropLink>

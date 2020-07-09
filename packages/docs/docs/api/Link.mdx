@@ -1,4 +1,4 @@
-# `<Link />`
+# <Link />
 
 This react component provides you with a declarative way to use client-side
 routing, creating an accessible anchor link (`<a>`).
@@ -7,9 +7,7 @@ routing, creating an accessible anchor link (`<a>`).
 <Link to="/home">Home</Link>
 ```
 
-## Props
-
-### to: string
+## to: string
 
 A string representation of the URL you want to navigate to. Leave it empty to
 navigate to the same page.
@@ -18,7 +16,7 @@ navigate to the same page.
 <Link to="/search?sort=date">Home</Link>
 ```
 
-### state: object
+## state: object
 
 State to add to the
 [`history`](https://developer.mozilla.org/en-US/docs/Web/API/Window/history)
@@ -30,7 +28,7 @@ object.
 </Link>
 ```
 
-### replace: boolean
+## replace: boolean
 
 When `true`, this will override the current entry in the browser history rather
 than creating a new one.

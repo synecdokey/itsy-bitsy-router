@@ -1,21 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useRoutes } from "itsy-bitsy-router";
-import { MDXProvider } from "@mdx-js/react";
+import { MDXProvider, Components } from "@mdx-js/react";
 
 import Sidebar from "./components/Sidebar";
-import Home from "./pages/index";
 import MDX from "./components/MDX";
 import Link from "~docs/api/Link.mdx";
 import Navigate from "~docs/api/navigate.mdx";
 import Hooks from "~docs/api/Hooks.mdx";
 import R from "~docs/api/Router.mdx";
 import Start from "~docs/guides/getting-started.mdx";
+import Home from "~docs/index.mdx";
 
 const App = () => {
   const Router = useRoutes(
     [
-      { path: "/", element: Home },
+      { path: "/", element: <Home /> },
       { path: "/getting-started", element: <Start /> },
       { path: "/link", element: <Link /> },
       { path: "/hooks", element: <Hooks /> },
@@ -26,7 +26,7 @@ const App = () => {
   );
 
   return (
-    <MDXProvider components={MDX}>
+    <MDXProvider components={MDX as Components}>
       <Router
         render={({ children }) => (
           <>

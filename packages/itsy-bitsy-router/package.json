@@ -9,6 +9,12 @@
     "dist"
   ],
   "repository": "https://github.com/synecdokey/itsy-bitsy-router",
+  "homepage": "https://itsy-bitsy-router.netlify.app",
+  "keywords": [
+    "small",
+    "router",
+    "react"
+  ],
   "author": "Emilia",
   "license": "MIT",
   "dependencies": {},

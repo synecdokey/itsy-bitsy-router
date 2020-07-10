@@ -46,7 +46,8 @@ export const useNavigate = () => {
 
   return (to?: string, opts?: { state?: object; replace?: boolean }) => {
     const method = opts?.replace ? "replaceState" : "pushState";
+    const url = to ? new URL(to, location.origin) : location;
     history[method](opts?.state, "", to);
-    setLocation({ ...location, pathname: to || location.pathname });
+    setLocation(url);
   };
 };
